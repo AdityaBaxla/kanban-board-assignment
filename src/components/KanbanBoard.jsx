@@ -1,7 +1,8 @@
 import React from 'react';
 import KanbanCard from './KanbanCard';
+import PriorityBar from "./PriorityBar"
 
-const KanbanBoard = (tickets) => {
+const KanbanBoard = () => {
   const dummyCardData = {
     id: 'CAM-1',
     title: 'Conduct Security Vulnerability Assesment',
@@ -10,26 +11,16 @@ const KanbanBoard = (tickets) => {
     priority: 2,
     status: 'In Progress',
   };
-
-  const uniquePriorities = [...new Set(tickets.map((ticket) => ticket.priority))];
+  
 
   return (
     <div className="kanban-board">
       <div className="column">
+        <PriorityBar/>
         <KanbanCard {...dummyCardData} />
       </div>
-      {uniquePriorities.map((priority) => (
-        <div key={priority} className="column">
-          <h2>Priority {priority}</h2>
-          {tickets
-            .filter((ticket) => ticket.priority === priority)
-            .map((ticket) => (
-              <KanbanCard key={ticket.id} title={ticket.title} tag={ticket.tag} userId={ticket.userId} status={ticket.status} priority={ticket.priority} />
-            ))}
-        </div>
-      ))}
+      {/* ... Other columns and cards */}
     </div>
-    
   );
 };
 
