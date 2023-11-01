@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #2e2e2e;
+    padding:20px;
+  }
+.dropdown{
+    border: #242424;
+    border-width: 10px;
+    border-radius: 2px;
+}
+  .dropdown select {
+    background: transparent;
+    border: none;
+    color: #242424;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .dropdown select option {
+    background-color: #333;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Styling the dropdown arrow (this may vary depending on the browser) */
+  .dropdown select::-ms-expand {
+    display: none;
+  }
+  
+  /* Custom arrow styling */
+  .dropdown select::after {
+    content: '\25BC'; /* Unicode character for a down arrow */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+  
