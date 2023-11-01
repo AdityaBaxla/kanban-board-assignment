@@ -1,38 +1,61 @@
 .App {
   text-align: center;
+  background-color: rgb(235, 236, 245);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.kanban-card {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 8px;
+  margin: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.kanban-board {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+}
+
+.column {
+  flex: 1;
+  border: 1px solid #ddd;
+  margin: 8px;
+  padding: 16px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown select {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown select option {
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+/* Styling the dropdown arrow (this may vary depending on the browser) */
+.dropdown select::-ms-expand {
+  display: none;
+}
+
+/* Custom arrow styling */
+.dropdown select::after {
+  content: '\25BC'; /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
 }

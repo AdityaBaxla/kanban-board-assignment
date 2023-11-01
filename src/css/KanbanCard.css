@@ -1,0 +1,40 @@
+.kanban-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 350px; /* Adjust the width to your preference */
+  }
+  
+  .card-header {
+    color: #000000;
+    text-align: left;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .card-id {
+    text-align: left;
+    color: #575757;
+  }
+  
+  .card-title {
+    margin: 0;
+  }
+  
+  .card-info {
+    padding: 10px;
+  }
+  
+  .card-info p {
+    margin: 0;
+  }
+  
+  .card-info p strong {
+    font-weight: bold;
+  }
+  
+  /* Add additional styling as needed */
+  
