@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  background-color: rgb(235, 236, 245);
+  /*background-color: rgb(235, 236, 245);*/
 }
 
 
 .kanban-card {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
+  background-color: #ffffff;
+  border: 2px solid #ddd;
   padding: 8px;
   margin: 8px;
 }
@@ -18,7 +18,7 @@
 
 .column {
   flex: 1;
-  border: 1px solid #ddd;
+  /*border: 1px solid #7a2f2f;*/
   margin: 8px;
   padding: 16px;
 }
@@ -27,15 +27,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #2e2e2e;
   padding: 10px 20px;
 }
 
 .dropdown select {
   background: transparent;
   border: none;
-  color: #fff;
+  color: #242424;
   font-size: 16px;
   cursor: pointer;
 }
