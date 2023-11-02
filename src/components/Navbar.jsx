@@ -24,29 +24,3 @@ const Navbar = () => {
 
 export default Navbar;
 */
-
-import React, { useState } from 'react';
-import '../css/Navbar.css'; // Import your CSS file for styling
-import DiplayBtn from './DisplayBtn';
-
-const NavBar = () => {
-  return (<div className='dropdown'>
-    <button><LuSettings2/> Display <BiChevronDown/></button>
-    <div className='dropdown-content'>
-      <label for="grouping">Grouping</label>
-      <select name="grouping" id='grouping'>
-        <option value="{status}">Status</option>
-        <option value="{priority}">Priority</option>
-        <option value="{user}">User</option>
-      </select>
-      <label for="ordering">Ordering</label>
-      <select name="ordering" id='ordering'>
-        <option value="{title}">Title</option>
-        <option value="{priority}">Priority</option>
-      </select>
-    </div>
-  </div>
-  )
-}
-
-export default NavBar;

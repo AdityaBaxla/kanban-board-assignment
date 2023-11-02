@@ -86,12 +86,7 @@ const KanbanBoard = () => {
       }
 ]);
 
-<<<<<<< HEAD
   const priorityLvls = [0,4,3,2,1];
-=======
-  const priorityLvls = [0,1,2,3,4];
->>>>>>> a62de241045eda8370e737bcec4fcf4a84369c17
-
   return (
     <div className="kanban-board">
       {priorityLvls.map((priority) => (
