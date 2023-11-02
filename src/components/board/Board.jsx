@@ -5,7 +5,7 @@ import Card from '../card/Card.jsx'
 
 
 
-const Board = ({columnPriority}) => {
+const Board = ({columnPriority, title}) => {
 
     const priorityLvls = [0,4,3,2,1]
     return(
@@ -16,10 +16,7 @@ const Board = ({columnPriority}) => {
                 <span className='more-top-title'>+ ...</span>
             </div>
             <div className='board-cards'>
-                <Card/>
-                <Card/>
-                <Card/>
-                <Card/>
+                <Card title={title}/>
             </div>
         </div>
     )

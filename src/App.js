@@ -33,6 +33,8 @@ const App = () => {
     fetch();
   }, [])
 
+  const priorityLvls = [0,4,3,2,1]
+
   return (
     <div className="App">
       <div className='dropdown'>
@@ -61,9 +63,12 @@ const App = () => {
       </div>
       <div className="board-container">
         <div className="boards">
-          {/* {data.map((item) => (
-            <li key={item.id}>{item.title}</li> 
-          ))} */}
+          {priorityLvls.map((priority) => (
+            tickets.filter( (task) => task.priority === priority)
+            .map( (task) => (
+              <Board key={priority} columnPriority = {priority} title={task.title}/>
+            ))
+          ))}
         </div>
       </div>
     </div>
