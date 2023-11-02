@@ -12,19 +12,23 @@ const App = () => {
   return (
     <div className="App">
       <div className='dropdown'>
-        <button><LuSettings2/> Display <BiChevronDown/></button>
+        <button className="btn"  onclick="document.querySelector('.dropdown-content').style.display = 'block'"><LuSettings2/> Display <BiChevronDown/></button>
         <div className='dropdown-content'>
-        <label for="grouping">Grouping</label>
-        <select name="grouping" id='grouping'>
-          <option value="{status}">Status</option>
-          <option value="{priority}">Priority</option>
-          <option value="{user}">User</option>
+          <div>
+          <label for="grouping">Grouping</label>
+          <select name="grouping" id='grouping'>
+            <option value="{status}">Status</option>
+            <option value="{priority}">Priority</option>
+            <option value="{user}">User</option>
+          </select>
+        </div>
+        <div>
+          <label for="ordering">Ordering</label>
+          <select name="ordering" id='ordering'>
+            <option value="{title}">Title</option>
+            <option value="{priority}">Priority</option>
         </select>
-        <label for="ordering">Ordering</label>
-        <select name="ordering" id='ordering'>
-          <option value="{title}">Title</option>
-          <option value="{priority}">Priority</option>
-      </select>
+        </div>
       </div>
       
       </div>

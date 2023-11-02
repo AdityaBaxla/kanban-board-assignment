@@ -30,6 +30,21 @@ p{
   font-size: 20;
 }
 
+.dropdown{
+  position: relative;
+}
+
+.dropdown-content{
+  transition: opacity 0.5;
+  display: grid;
+  /* width: 100%; */
+  position: absolute;
+  top: 30px;
+}
+
+.btn:active .dropdown-content{
+  opacity: 1;
+}
 .kanban-card {
   background-color: #ffffff;
   border: 2px solid #ddd;
