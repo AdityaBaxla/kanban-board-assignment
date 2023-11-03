@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Board from "./components/board/Board.jsx";
+import BoardPriority from "./components/board/BoardPriority.jsx";
 import "./App.css";
 import axios from "axios";
 
@@ -19,6 +19,7 @@ const App = () => {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
   const [groupBy, setGroupBy] = useState("status"); //status, priority, users
+  const [showDropdown, setDropDown] = useState(false);
 
   const handleGroupByChange = (event) => {
     setGroupBy(event.target.value);
@@ -37,9 +38,10 @@ const App = () => {
   // putting data into ticketsByStatus
   const ticketsByStatus = {
     todo: [],
-    inProgress: [],
+    "in progress": [],
     backlog: [],
-    completed: [], // Add more categories as needed
+    done: [],
+    canceled: [], // Add more categories as needed
   };
 
   //putting data into ticketsByPriority
@@ -50,6 +52,12 @@ const App = () => {
     2: [],
     1: [],
   };
+
+  //putting data into ticketsByUser
+  const ticketByUser = {};
+  users.forEach((user) => {
+    ticketByUser[user] = [];
+  });
 
   tickets.forEach((ticket) => {
     const status = ticket.status.toLowerCase(); // Ensure the status is lowercase for consistency
@@ -65,36 +73,49 @@ const App = () => {
     }
   });
 
+  tickets.forEach((ticket) => {
+    const user = ticket.user; // Ensure the status is lowercase for consistency
+    if (ticketsByPriority[user]) {
+      ticketsByPriority[user].push(ticket);
+    }
+  });
+
   return (
     <div className="App">
-      <div className="dropdown">
-        <button className="btn">
-          <LuSettings2 /> Display <BiChevronDown />
-        </button>
-        <div className="dropdown-content">
-          <div>
-            <label for="grouping">Grouping</label>
-            <select
-              name="grouping"
-              id="grouping"
-              onChange={handleGroupByChange}
-            >
-              <option value="status">Status</option>
-              <option value="priority">Priority</option>
-              <option value="user">User</option>
-            </select>
-          </div>
-          <div>
-            <label for="ordering">Ordering</label>
-            <select name="ordering" id="ordering">
-              <option value="{title}">Title</option>
-              <option value="{priority}">Priority</option>
-            </select>
-          </div>
-        </div>
-      </div>
       <div className="navbar">
-        <h2>this is nav bar.. make it blue</h2>
+        <div className="dropdown">
+          <button
+            type="button"
+            onClick={() => setDropDown(!showDropdown)}
+            className="btn"
+          >
+            <LuSettings2 /> Display <BiChevronDown />
+          </button>
+          {showDropdown && (
+            <div className="dropdown-content">
+              <div className="name-and-dd">
+                <label for="grouping">Grouping</label>
+                <select
+                  className="dd-area"
+                  name="grouping"
+                  id="grouping"
+                  onChange={handleGroupByChange}
+                >
+                  <option value="status">Status</option>
+                  <option value="priority">Priority</option>
+                  <option value="user">User</option>
+                </select>
+              </div>
+              <div className="name-and-dd">
+                <label for="ordering">Ordering</label>
+                <select className="dd-area" name="ordering" id="ordering">
+                  <option value="title">Title</option>
+                  <option value="priority">Priority</option>
+                </select>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
       <div className="board-container">
         <div className="boards">
@@ -104,7 +125,11 @@ const App = () => {
             ))
           ) : groupBy === "priority" ? (
             Object.entries(ticketsByPriority).map(([priority, tickets]) => (
-              <Board key={priority} priority={priority} tickets={tickets} />
+              <BoardPriority
+                key={priority}
+                priority={priority}
+                tickets={tickets}
+              />
             ))
           ) : (
             <p>no data</p>

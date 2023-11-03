@@ -1,13 +1,33 @@
 .card{
     position: relative;
     background-color: white;
-    border: 1px solid black;
+    border: .5px solid rgb(183, 184, 202);
     border-radius: 6px;
-    box-shadow: 2px 2px 5px black ;
+    box-shadow: 1px 1px 2px rgb(152, 183, 241) ;
     display: flex;
     flex-direction: column;
+    padding: 9px;
 }
 
+.card-id{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 100;
+    color: rgb(138, 138, 138);
+    font-variant: small-caps;
+    font-stretch: extra-expanded ;
+}
+
+.title{
+    font-variant: initial;
+    font-weight: 400;
+    font-size: 16px;
+    font-stretch: extra-condensed;
+}
+
+.bottom-bar{
+    color: rgb(138, 138, 138);
+    font-size:10px;
+}
 .profile{
     position: absolute;
     top: 0;
