@@ -5,22 +5,24 @@ import Card from '../card/Card.jsx'
 
 
 
-const Board = ({title, ticketData, users, groupBy, sortBy}) => {
+const BoardStatus = ({status, tickets}) => {
 
     const priorityLvls = [0,4,3,2,1]
     return(
         <div className='board'>
             <div className='board-top'>
-                <p className='board-top-title'>priority {1}</p>
+                <p className='board-top-title'>status {status}</p>
                 <span> 2 </span>
                 <span className='more-top-title'>+ ...</span>
             </div>
             <div className='board-cards'>
-                <Card title={'replace this'} />
+                {tickets.map(tick => (
+                    <Card key={tick.id} title={tick.title}/>
+                ))}
                 
             </div>
         </div>
     )
 }
 
-export default Board;
+export default BoardStatus;
