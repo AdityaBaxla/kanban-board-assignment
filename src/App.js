@@ -18,7 +18,11 @@ const api = "https://api.quicksell.co/v1/internal/frontend-assignment";
 const App = () => {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
+  const [groupBy, setGroupBy] = useState("status"); //status, priority, users
 
+  const handleGroupByChange = (event) => {
+    setGroupBy(event.target.value);
+  };
   useEffect(() => {
     async function fetch() {
       const res = await axios.get(api);
@@ -34,7 +38,17 @@ const App = () => {
   const ticketsByStatus = {
     todo: [],
     inProgress: [],
-    backlog: [], // Add more categories as needed
+    backlog: [],
+    completed: [], // Add more categories as needed
+  };
+
+  //putting data into ticketsByPriority
+  const ticketsByPriority = {
+    0: [],
+    4: [],
+    3: [],
+    2: [],
+    1: [],
   };
 
   tickets.forEach((ticket) => {
@@ -44,22 +58,30 @@ const App = () => {
     }
   });
 
+  tickets.forEach((ticket) => {
+    const priority = ticket.priority; // Ensure the status is lowercase for consistency
+    if (ticketsByPriority[priority]) {
+      ticketsByPriority[priority].push(ticket);
+    }
+  });
+
   return (
     <div className="App">
       <div className="dropdown">
-        <button
-          className="btn"
-          onclick="document.querySelector('.dropdown-content').style.display = 'block'"
-        >
+        <button className="btn">
           <LuSettings2 /> Display <BiChevronDown />
         </button>
         <div className="dropdown-content">
           <div>
             <label for="grouping">Grouping</label>
-            <select name="grouping" id="grouping">
-              <option value="{status}">Status</option>
-              <option value="{priority}">Priority</option>
-              <option value="{user}">User</option>
+            <select
+              name="grouping"
+              id="grouping"
+              onChange={handleGroupByChange}
+            >
+              <option value="status">Status</option>
+              <option value="priority">Priority</option>
+              <option value="user">User</option>
             </select>
           </div>
           <div>
@@ -76,9 +98,17 @@ const App = () => {
       </div>
       <div className="board-container">
         <div className="boards">
-          {Object.entries(ticketsByStatus).map(([status, tickets]) => (
-            <BoardStatus key={status} status={status} tickets={tickets} />
-          ))}
+          {groupBy === "status" ? (
+            Object.entries(ticketsByStatus).map(([status, tickets]) => (
+              <BoardStatus key={status} status={status} tickets={tickets} />
+            ))
+          ) : groupBy === "priority" ? (
+            Object.entries(ticketsByPriority).map(([priority, tickets]) => (
+              <Board key={priority} priority={priority} tickets={tickets} />
+            ))
+          ) : (
+            <p>no data</p>
+          )}
         </div>
       </div>
     </div>
