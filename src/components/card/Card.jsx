@@ -9,7 +9,7 @@ const Card = ({title, id, tag, userId, status}) => {
             <div className="profile">0</div>
             <div className="title">{title}</div>
             <div className="bottom-bar">
-                <span id="card-icon" className="bot-left">!</span> <span className="card-labels"><span>{<GoDotFill/>}</span><span>{tag}</span></span>
+                <span id="card-icon" className="bot-left">!</span> <span className="card-labels"><span id="feature-id">{<GoDotFill background-color='white'/>}</span><span id="tag">{tag}</span></span>
             </div>
         </div>
     )

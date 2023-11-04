@@ -23,6 +23,7 @@
 
 .boards{
   min-width: fit-content;
+  justify-content: space-between;
   display: flex;
   gap: 30px;
   padding: 10px;
@@ -153,17 +154,6 @@ p{
 
 }
 
-.kanban-card {
-  background-color: #ffffff;
-  border: 2px solid #ddd;
-  padding: 8px;
-  margin: 8px;
-}
-
-.kanban-board {
-  display: flex;
-  justify-content: space-around;
-}
 
 .column {
   flex: 1;

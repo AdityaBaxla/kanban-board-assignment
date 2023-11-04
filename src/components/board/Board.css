@@ -1,6 +1,6 @@
 .board{
-    min-width: 200px;
     max-height: 100%;
+    width: 370px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -25,5 +25,7 @@
     gap: 10px;
     border-bottom: 10px;
     padding: 1px;
-    overflow-y: auto;
+    max-height: 100vh;
+    overflow-x: auto;
+    
 }

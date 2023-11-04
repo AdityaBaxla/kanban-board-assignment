@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
 import './Board.css'
 import Card from '../card/Card.jsx'
-import {GoXCircleFill} from 'react-icons/go'
-import {GoClockFill} from 'react-icons/go'
-import {GoCheckCircleFill} from 'react-icons/go'
-import {GoAlertFill} from 'react-icons/go'
-import {GoSkipFill} from 'react-icons/go'
-import {GoCircle} from 'react-icons/go' 
+import {GoXCircleFill,GoClockFill,GoCheckCircleFill,GoAlertFill, GoSkipFill, GoCircle} from 'react-icons/go'
+
 
 const BoardStatus = ({status, tickets}) => {
     
