@@ -34,3 +34,16 @@
     right: 10px;
     
 }
+
+.bottom-left{
+    padding: 1px;
+    margin-right: 10px;
+}
+#card-icon{
+    padding-left: 2px;
+    margin-right: 10px;
+}
+.card-label{
+    display: flex;
+    align-items: center;
+}

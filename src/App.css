@@ -107,8 +107,21 @@ p{
   align-content: space-between;
   position: absolute;
   top: 50px;
-  border: 1px solid #24292E;
-  border-radius: 2px;
+  left: 0px;
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #3a3c3f;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 20px;
+  list-style: none;
+
   padding: 10px;
   width: 250px;
 }
@@ -116,10 +129,28 @@ p{
 .name-and-dd{
   display: flex;
   justify-content:space-between;
+  align-items: center;
   width: 100%;
+  margin: 3px;
 }
 .dd-area{
-  color: #363636;
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  width: 80px;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  list-style: none;
+  justify-content: center;
+
 }
 
 .kanban-card {

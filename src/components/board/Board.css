@@ -10,11 +10,14 @@
 .board-top-title{
     display: inline;
     flex:1;
+    padding-left: 15px;
 }
 
 .more-top-title{
     float: right;
 }
+
+
 
 .board-cards{
     display: flex;

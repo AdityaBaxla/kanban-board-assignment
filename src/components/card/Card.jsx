@@ -1,5 +1,7 @@
 import React from "react";
 import './Card.css'
+import {GoDotFill}  from "react-icons/go";
+
 const Card = ({title, id, tag, userId, status}) => {
     return(
         <div className="card">
@@ -7,7 +9,7 @@ const Card = ({title, id, tag, userId, status}) => {
             <div className="profile">0</div>
             <div className="title">{title}</div>
             <div className="bottom-bar">
-                <span className="bot-left">!</span> <span className="card-labels">{tag}</span>
+                <span id="card-icon" className="bot-left">!</span> <span className="card-labels"><span>{<GoDotFill/>}</span><span>{tag}</span></span>
             </div>
         </div>
     )
