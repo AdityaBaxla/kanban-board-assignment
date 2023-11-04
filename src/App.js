@@ -14,6 +14,8 @@ const priorityLvls = [0, 4, 3, 2, 1];
 
 //getting the json from api provided
 const api = "https://api.quicksell.co/v1/internal/frontend-assignment";
+//for local testing
+const api2 = "http://localhost:5000/";
 
 const App = () => {
   const [tickets, setTickets] = useState([]);
@@ -35,16 +37,16 @@ const App = () => {
     fetch();
   }, []);
 
-  // putting data into ticketsByStatus
+  // putting empty array ticketsByStatus
   const ticketsByStatus = {
     todo: [],
     "in progress": [],
     backlog: [],
     done: [],
-    canceled: [], // Add more categories as needed
+    canceled: [],
   };
 
-  //putting data into ticketsByPriority
+  //putting empty array into ticketsByPriority
   const ticketsByPriority = {
     0: [],
     4: [],
@@ -53,10 +55,11 @@ const App = () => {
     1: [],
   };
 
-  //putting data into ticketsByUser
-  const ticketByUser = {};
+  //putting empty array into ticketsByUser
+  const ticketsByUser = {};
   users.forEach((user) => {
-    ticketByUser[user] = [];
+    const id = user.id;
+    ticketsByUser[id] = [];
   });
 
   tickets.forEach((ticket) => {
@@ -74,11 +77,13 @@ const App = () => {
   });
 
   tickets.forEach((ticket) => {
-    const user = ticket.user; // Ensure the status is lowercase for consistency
-    if (ticketsByPriority[user]) {
-      ticketsByPriority[user].push(ticket);
+    const user = ticket.userId; //
+    if (ticketsByUser[user]) {
+      ticketsByUser[user].push(ticket);
     }
   });
+
+  console.log(ticketsByUser);
 
   return (
     <div className="App">

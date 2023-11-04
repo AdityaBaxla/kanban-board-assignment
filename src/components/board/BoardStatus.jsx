@@ -2,17 +2,19 @@ import React, { useState } from 'react'
 import './Board.css'
 import Card from '../card/Card.jsx'
 import {GoXCircleFill,GoClockFill,GoCheckCircleFill,GoAlertFill, GoSkipFill, GoCircle} from 'react-icons/go'
+import {HiOutlineEllipsisHorizontalm, HiPlus, HiMiniPlus, HiEllipsisHorizontal} from 'react-icons/hi2'
 
 
 const BoardStatus = ({status, tickets}) => {
     
     const iconMap = {
-        todo:<GoCircle className="status-icon-style" color="#9C9BC7"/>,
+        todo:<GoCircle className="status-icon-style" color="#95B736"/>,
         'in progress': <GoClockFill className="status-icon-style" color="#EBCB62" />,
         done: <GoCheckCircleFill className="status-icon-style" color="#606ACB"/>,
         canceled: <GoXCircleFill className="status-icon-style" color="#97A2B1"/>,
         backlog: <GoSkipFill className="status-icon-style" color="#FA5632"/>
     }
+    
     const priorityLvls = [0,4,3,2,1]
 
     const cardCount = tickets.length
@@ -22,7 +24,7 @@ const BoardStatus = ({status, tickets}) => {
                 <span id={iconMap[status]}> {iconMap[status]}</span>
                 <p className='board-top-title'>{status}</p>
                 <span> {cardCount} </span>
-                <span className='more-top-title'>+ ...</span>
+                <span className='more-top-title'><span><HiMiniPlus color="rgb(138, 138, 138)"/></span><HiEllipsisHorizontal color="rgb(138, 138, 138)"/></span>
             </div>
             <div className='board-cards'>
                 {tickets.map(tick => (

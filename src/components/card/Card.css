@@ -8,24 +8,32 @@
     box-shadow: 1px 1px 2px rgb(152, 183, 241) ;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; 
+
     padding: 9px;
 }
 
+
 .card-id{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 100;
     color: rgb(138, 138, 138);
     font-variant: small-caps;
     font-stretch: extra-expanded ;
     background-color: white;
+    font-size: 14px;
 }
 
-.title{
+.title {
     font-variant: initial;
     font-weight: 400;
     font-size: 16px;
     font-stretch: extra-condensed;
     background-color: white;
+    text-overflow: ellipsis; 
+    height: 2.8em;
+    overflow: hidden; 
+    white-space: wrap;
 }
 
 .bottom-bar{
