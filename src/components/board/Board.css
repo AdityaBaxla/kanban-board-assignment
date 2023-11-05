@@ -5,18 +5,28 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: #F4F5F8;
 }
+
+.board-top{
+    background-color: #F4F5F8;
+}
+
 
 .board-top-title{
     display: inline;
     flex:1;
     padding-left: 15px;
+    margin-bottom: 10px;
 }
 
 .more-top-title{
     float: right;
 }
 
+.card-count{
+    color: rgb(138, 138, 138);
+}
 
 
 .board-cards{
@@ -27,5 +37,6 @@
     padding: 1px;
     max-height: 100vh;
     overflow-x: auto;
+    background-color: #F4F5F8;
     
 }

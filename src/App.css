@@ -22,6 +22,7 @@ main : color: black; secondary color: rgb(138, 138, 138);
   background-color: #ffffff;
 }
 
+
 .board-container{
   flex:1;
   width: 100%;
@@ -29,6 +30,7 @@ main : color: black; secondary color: rgb(138, 138, 138);
   padding-top: 2rem;
   padding-left: 1.2rem;
   overflow-x: auto;
+  background-color: #F4F5F8;
 }
 
 .boards{
@@ -37,6 +39,7 @@ main : color: black; secondary color: rgb(138, 138, 138);
   display: flex;
   gap: 30px;
   padding: 10px;
+  background-color: #F4F5F8;
 }
 
 .board{
@@ -147,7 +150,7 @@ p{
 }
 .dd-area{
   appearance: none;
-  background-color: #FAFBFC;
+  background-color: white;
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;

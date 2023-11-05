@@ -20,11 +20,11 @@ const imageMap = {
     
 }
 
-const Card = ({title, id, tag, userId, status}) => {
+const CardUser = ({title, id, tag, userId, status}) => {
     return(
         <div className="card">
             <div className="card-id">{id}</div>
-            <div className="profile"><img src={imageMap[userId]} style={{ width: 32, height: 32 }} alt="Avtar"></img></div>
+            <div className="profile"></div>
             <div className="title">{title}</div>
             <div className="bottom-bar">
                 <span id="card-icon" className="bot-left">!</span> <span className="card-labels"><span id="feature-id">{<GoDotFill background-color='white'/>}</span><span id="tag">{tag}</span></span>
@@ -33,4 +33,4 @@ const Card = ({title, id, tag, userId, status}) => {
     )
 }
 
-export default Card;
+export default CardUser;
