@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/kanban-board-assignment/static/css/main.473b045b.css",
+    "main.js": "/kanban-board-assignment/static/js/main.7062ba22.js",
+    "static/media/usr-2.png": "/kanban-board-assignment/static/media/usr-2.bfd80d93c3b77f65c957.png",
+    "static/media/usr-4.png": "/kanban-board-assignment/static/media/usr-4.b5f5d2994117daab0fa9.png",
+    "static/media/usr-3.png": "/kanban-board-assignment/static/media/usr-3.c7bb6d2648058b86cb52.png",
+    "static/media/usr-5.png": "/kanban-board-assignment/static/media/usr-5.5b6adb8e38ee506fde52.png",
+    "static/media/usr-6.png": "/kanban-board-assignment/static/media/usr-6.68a7a3790a7c312208d6.png",
+    "static/media/usr-1.png": "/kanban-board-assignment/static/media/usr-1.39acfdd8c10d32e77dc7.png",
+    "index.html": "/kanban-board-assignment/index.html",
+    "main.473b045b.css.map": "/kanban-board-assignment/static/css/main.473b045b.css.map",
+    "main.7062ba22.js.map": "/kanban-board-assignment/static/js/main.7062ba22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.473b045b.css",
+    "static/js/main.7062ba22.js"
+  ]
+}
